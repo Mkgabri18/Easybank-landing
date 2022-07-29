@@ -1,11 +1,24 @@
 //- header.pug  header component
 
 //- variables
-- var navItems = ['Home', 'Projects', 'About']
+- var navItems = ['Home', 'About', 'Contact', 'Blog', 'Careers'];
 
 header.header
-    h1 Main Brand
-    nav.nav
-        ul.menu
+    .overlay.has-fade
+    nav.container.container--pall.flex.flex-jc-sb.flex-ai-c
+        a(href="/").header__logo
+            img(src="./images/logo.svg", alt="Easy Bank Logo")
+        a(href="#")#btnHamburger.header__toggle.hide-for-desktop
+            span
+            span
+            span
+
+        .header__links.hide-for-mobile
             each item in navItems
-                li: a(href='#')= item
+                a(href='#')= item
+
+        a(href="#" type="button").button.header__cta.hide-for-mobile Request Invite
+
+    .header__menu.has-fade
+        each item in navItems
+            a(href="#")= item
