@@ -1,30 +1,16 @@
+/* Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap');
 
+/* Files Global */
 @import "config/mixins";
 @import "config/variables";
+@import "animations/animation";
 @import "base/base";
-//@import "layout/layout";
-//@import "theme/theme";
+@import "layout/layout";
+
+/* Files Component */
 @import "components/header";
 @import "components/main";
 @import "components/footer";
 
 
-/* bodylayout */
-body {
-  display: grid;
-  min-height: 100vh;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 80px 1fr 100px;
-}
-
-header {
-  grid-column: 1/ span 12;
-}
-
-main {
-  grid-column: 1/ span 12;
-}
-
-footer {
-  grid-column: 1/ span 12;
-}
