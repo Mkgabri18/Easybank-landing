@@ -1,4 +1,6 @@
 import style from './styles/style.scss';
+import './assets/logo.svg';
+import './assets/logo-white.svg';
 
 console.log("Hello World, time to init")
 /*let template = require("./templates/components/users.pug");

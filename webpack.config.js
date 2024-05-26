@@ -6,7 +6,7 @@ const config = {
     entry: './src/app.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "[name].bundle.js",
+        filename: "js/[name].bundle.js",
     },
     devServer: {
         port: 3000,
@@ -18,7 +18,7 @@ const config = {
             template: './src/templates/views/index.pug'
         }),
         new MiniCssExtractPlugin({
-            filename: 'bundle.css'
+            filename: 'css/bundle.css'
         })
     ],
     module: {
@@ -41,7 +41,8 @@ const config = {
               {
                 loader: 'file-loader',
                 options: {
-                    name:'[path][name].[ext]'
+                    name:'[name].[ext]',
+                    outputPath: 'assets/',
                 }
               },
             ]
