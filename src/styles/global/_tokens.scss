@@ -1,0 +1,60 @@
+$colors: (
+  'dark-blue': hsl(233, 26%, 24%),
+  'lime-green': hsl(136, 65%, 51%),
+  'bright-cyan': hsl(192, 70%, 51%),
+  'grayish-blue': hsl(233, 8%, 62%),
+  'light-grayish-blue': hsl(220, 16%, 96%),
+  'veryLight-gray': hsl(0, 0%, 98%),
+  'white': hsl(0, 0%, 100%),
+);
+
+// 640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": 40rem,
+  "large": 64rem,
+  "xlarge": 87.5rem
+);
+
+// 639px, 1023px, 1399px
+$breakpoints-down: (
+  "small": 39.9375rem,
+  "medium": 63.9375rem,
+  "large": 87.4375rem
+);
+
+$zIndex: (
+  'z-back': -10,
+  'z-normal': 1,
+  'z-tooltip': 10,
+  'z-fixed': 100,
+  'z-modal': 1000
+);
+
+$fontsWeight: (
+  'font-regular': 400,
+  'font-bold': 700,
+)
+
+$
+
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+
+  @each $key, $val in $zIndex {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $font in $fontsWeight {
+    --#{$key}: #{$font};
+  }
+}
+
+@each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: var(--#{$name});
+  }
+  
+}

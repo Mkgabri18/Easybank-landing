@@ -1,0 +1,25 @@
+/* Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap');
+
+/* set layer to follow CUBE methodology */
+@layer global, layout, blocks, utilities;
+
+/* Files Global */
+@import "global/tokens.scss";
+@import "global/reset";
+@import "global/mixins";
+@import "global/global";
+
+/* Files Block */
+@import "abstract/mixins";
+@import "abstract/variables";
+@import "abstract/animation";
+
+@import "base/reset";
+@import "layout/layout";
+
+/* Files Component */
+@import "components/header";
+@import "components/footer";
+
+

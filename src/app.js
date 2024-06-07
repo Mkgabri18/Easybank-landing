@@ -1,4 +1,4 @@
-import style from './styles/style.scss';
+import style from './styles/index.scss';
 import './assets/logo.svg';
 import './assets/logo-white.svg';
 

@@ -1,4 +1,3 @@
-// Paleta de colores
 $darkBlue: hsl(233, 26%, 24%);
 $limeGreen: hsl(136, 65%, 51%);
 $brightCyan: hsl(192, 70%, 51%);
@@ -7,15 +6,12 @@ $lightGrayishBlue: hsl(220, 16%, 96%);
 $veryLightGray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 
-
-
 // variables de capas ( z-index )
 $z-back: -10;
 $z-normal: 1;
 $z-tooltip: 10;
 $z-fixed: 100;
 $z-modal: 1000;
-
 
 
 //Font sizes
@@ -31,15 +27,14 @@ $h3-font-size: 1.25rem;
 $body-font-size: .9rem;
 $small-font-size: .75rem;
 $banner-text-size: 2.4rem;
-@include breakpoint-up(medium) {
-    $h1-font-size: 2.5rem;
-    $h2-font-size: 1.75rem;
-    $h3-font-size: 1.5rem;
-    $body-font-size: 1rem;
-    $small-font-size: .8rem;
-    $banner-text-size: 1.6rem;  
+@include breakpoint-up(large) {
+  $h1-font-size: 2.5rem;
+  $h2-font-size: 1.75rem;
+  $h3-font-size: 1.5rem;
+  $body-font-size: 1rem;
+  $small-font-size: .8rem;
+  $banner-text-size: 1.6rem;  
 }
-
 
 //variables de font
 $Snigle-font: 'Sniglet', cursive;
@@ -47,7 +42,9 @@ $Rubik: 'Rubik', cursive;
 $Patua: 'Patua One', cursive;
 $Lobster: 'Lobster', cursive;
 $Acme: 'Acme', cursive;
+//------
 $Public-sans: 'Public Sans', sans-serif;
 
-
-
+$font-family: $Public-sans;
+$font-weight-regular: 400;
+$font-weight-bold: 700;

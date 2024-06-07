@@ -1,0 +1,84 @@
+
+/* Mixins */
+@mixin breakpoint-up($bp) {
+  @if map-has-key($breakpoints-up, $bp) {
+    @media screen and (min-width: map-get($breakpoints-up, $bp)) {
+      @content;
+    }
+  }
+  @else {
+    @warn 'Invalid breakpoint selected #{$bp}';
+  }
+}
+
+
+@mixin breakpoint-down($bp) {
+  @if map-has-key($breakpoints-down, $bp) {
+    @media screen and (max-width: map-get($breakpoints-down, $bp)) {
+      @content;
+    }
+  }
+  @else {
+    @warn 'Invalid breakpoint selected #{$bp}';
+  }
+ 
+}
+
+@mixin font-regular {
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-bold {
+  font-family: $font-family;
+  font-weight: $font-weight-bold;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin grid {
+  display: grid;
+}
+
+@mixin align($align) {
+  align-items: $align;
+}
+
+@mixin justify($content) {
+  justify-content: $content;
+}
+
+@mixin flex-align($align:center) {
+  @include flex;
+  @include align($align);
+}
+
+@mixin flex-justify($content:center) {
+  @include flex;
+  @include justify($content);
+}
+
+@mixin flex-custom($align:center, $content:center) {
+  @include flex;
+  @include align($align);
+  @include justify($content);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

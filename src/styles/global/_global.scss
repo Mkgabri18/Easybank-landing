@@ -1,12 +1,14 @@
 // Aplico las reglas bases para los elementos html, como un reset
 
-*,*::before,::after {
-  box-sizing: border-box;
+
+html {
+  overflow-x: hidden;
 }
 
 html, body {
-  margin: 0;
-  width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 body {
@@ -26,7 +28,7 @@ body {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 300;
@@ -56,21 +58,9 @@ p {
     margin-bottom: 2.25rem;
 }
 
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
+a, a:visited, a:hover {
+    text-decoration: none;
 }
 
-img {
-  width: 100%;
-}
 
-a {
-  text-decoration: none;
-  color: inherit;
-  &:focus, &:active, &:visited {
-    color: inherit;
-  }
-}
+  
