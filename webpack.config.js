@@ -14,7 +14,7 @@ const config = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/templates/views/index.pug'
+            template: path.join(__dirname, './src/templates/views/index.pug'),
         }),
         new MiniCssExtractPlugin({
             filename: 'css/bundle.css'

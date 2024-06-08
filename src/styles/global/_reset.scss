@@ -6,7 +6,7 @@
 }
 
 /* Remove default margin and border */
-*:where(:not(iframe, canvas, img, svg. video):not(svg *)) {
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   margin: 0;
   border: 0;
 }

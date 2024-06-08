@@ -33,28 +33,28 @@ $zIndex: (
 $fontsWeight: (
   'font-regular': 400,
   'font-bold': 700,
-)
+);
 
-$
+$fontsSize: (
+  "font-xlg": 3.25rem,  // 52px
+  "font-lg": 1.25rem,  // 20px
+  "font-md": 1.125rem, // 18px
+  "font-sm": 0.875rem, // 14px
+);
 
 
 :root {
-  @each $name, $color in $colors {
-    --#{$name}: #{$color};
-  }
-
-  @each $key, $val in $zIndex {
-    --#{$key}: #{$val};
-  }
-
   @each $key, $font in $fontsWeight {
     --#{$key}: #{$font};
+  }
+
+  @each $key, $size in $fontsSize {
+    --#{$key}: #{$size};
   }
 }
 
 @each $name, $color in $colors {
     .bg-#{$name} {
       background-color: var(--#{$name});
-  }
-  
+  } 
 }

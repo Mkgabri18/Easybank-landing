@@ -6,20 +6,17 @@
 
 /* Files Global */
 @import "global/tokens.scss";
-@import "global/reset";
-@import "global/mixins";
-@import "global/global";
+@import "global/reset.scss";
+@import "global/mixins.scss";
+@import "global/global.scss";
 
 /* Files Block */
-@import "abstract/mixins";
-@import "abstract/variables";
-@import "abstract/animation";
+@import "abstract/variables.scss";
+@import "abstract/animation.scss";
 
-@import "base/reset";
-@import "layout/layout";
+@import "layout/layout.scss";
 
 /* Files Component */
-@import "components/header";
-@import "components/footer";
-
+@import "components/header.scss";
+@import "components/footer.scss";
 
