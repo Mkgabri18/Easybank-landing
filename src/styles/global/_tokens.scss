@@ -93,11 +93,14 @@ $buttons: (
   @each $key, $val in $buttons {
     --#{$key}: #{$val};
   }
+
+  @each $key, $size in $fontsSize {
+    --#{$key}: #{$size};
+  }
 }
 
 @each $name, $color in $colors {
     .bg-#{$name} {
       background-color: var(--#{$name});
-  }
-  
+  } 
 }
