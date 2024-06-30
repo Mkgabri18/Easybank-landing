@@ -1,0 +1,17 @@
+/**
+ * Default flexbox utility classes to control layout
+ *
+ * --layout-gap: set the gap between the child elements (horizontal & vertical)
+ * --layout-direction: sets flex-direction
+ * --layout-align: sets align-items
+ */
+.flex {
+  --layout-gap: 0;
+  --layout-direction: row;
+  --layout-align: center;
+
+  display: flex;
+  flex-direction: var(--layout-direction);
+  align-items: var(--layout-align);
+  gap: var(--layout-gap);
+}

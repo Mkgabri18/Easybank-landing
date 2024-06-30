@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && webpack --mode=production",
     "build:dev": "npm run prebuild && webpack --mode=development",

@@ -1,6 +1,6 @@
 .footer {
-    background-color: $darkBlue;
-    color: $white;
+    background-color: var(--dark-blue);
+    color: var(--white);
     padding: 2.5rem;
     text-align: center;
 
@@ -19,7 +19,7 @@
     }
     
     a {
-        color: $white;
+        color: var(--white);
     }
     &__logo{
         display: inline-block;
@@ -47,7 +47,7 @@
             }
 
             &:hover svg path {
-                fill: $limeGreen
+                fill: var(--lime--green);
             }
         }
         a:not(:last-child) {
@@ -83,7 +83,7 @@
             line-height: 2.25;
             transition: color 150ms ease-in-out;
             &:hover {
-                color: $limeGreen;
+                color: var(--lime--green);
             }
         }
     }
@@ -104,7 +104,7 @@
 
     &__copyright {
         font-size: 0.8125rem;
-        color: $grayishBlue;
+        color: var(--dark-blue);
 
         @include breakpoint-up(large) {
             grid-area: copyright;

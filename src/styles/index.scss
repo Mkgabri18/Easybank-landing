@@ -5,18 +5,28 @@
 @layer global, layout, blocks, utilities;
 
 /* Files Global */
-@import "global/tokens.scss";
+@import "global/tokens";
 @import "global/reset";
 @import "global/mixins";
 @import "global/global";
 
-/* Files Block */
-@import "abstract/mixins";
-@import "abstract/variables";
-@import "abstract/animation";
 
-@import "base/reset";
-@import "layout/layout";
+/* Files Layout */
+@import "layout/center";
+@import "layout/fifty";
+@import "layout/flex";
+@import "layout/grid";
+@import "layout/sidebar";
+@import "layout/utilities";
+
+/* Files Block */
+
+
+
+/* Files Utilities */
+@import "utilities/animation";
+@import "utilities/click-area";
+@import "utilities/hover-group";
 
 /* Files Component */
 @import "components/header";

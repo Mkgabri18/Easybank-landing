@@ -1,0 +1,14 @@
+/**
+ * horizontal center of layout elements
+ *
+ * --layout-threshold: sets the width of the element that is centered
+ *
+ */
+
+.center {
+  --layout-threshold: 100%;
+
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--layout-threshold);
+}

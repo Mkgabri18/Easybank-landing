@@ -23,9 +23,10 @@ Crear el ** webpack.config.js ** para configurar webpack
 Agregar los siguentes script en el package.json :
 ```json
 "script": {
-	"build": "webpack --mode=production",
-	"build:dev": "webpack --mode=development",
-	"dev": "webpack-dev-server --mode=development"
+		"prebuild": "rimraf dist",
+    "build": "npm run prebuild && webpack --mode=production",
+    "build:dev": "npm run prebuild && webpack --mode=development",
+    "dev": "webpack-dev-server --mode=development"
 },
 ```
 
@@ -48,10 +49,31 @@ npm i -D pug pug-loader html-webpack-plugin
 npm i -D css-loader style-loader sass sass-loader
 ```
 
-- Plugins utile para el desarrollo con bootstrap y jquery (opcionales)
+# Arrancar Projecto
 
-```bash
-npm i bootstrap jquery popper.js
+Clone de la repository
+
+
+```
+npm install
 ```
 
+Simplemente para descargar todas la dependencias del projecto.
 
+## Estructura 
+
+Projecto restructurado para aplicar principalmente la metodolgia CUBE CSS, se trata de una metodolgia css
+que se puede aplicar con scss o css y donde se hace incapiè al reutilizo de las clases mediante sus
+tipologias de:
+
+- Composition
+- utility
+- Block
+- Exception
+
+Ispirado en el omonimo articulo [CUBE CSS](https://cube.fyi/)
+
+Con esta metodolgia se hace uso de los **Design Tokens** como estructura, con ayuda de un file JSON para 
+contruir el sistema de variables, en este particular ejercicio utilizando **SASS** con sus objectos nos 
+ayudarà a recostruir un design system.
+El file donde se almacenan los tokens esta en './src/styles/global/_tokens.scss'.

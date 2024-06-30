@@ -30,12 +30,39 @@ $zIndex: (
   'z-modal': 1000
 );
 
-$fontsWeight: (
-  'font-regular': 400,
-  'font-bold': 700,
-)
+$fontsSize: (
+  'font-size-sm':  0.875rem, // 14px
+  'font-size-md': 1.125rem, // 18px
+  'font-size-lg': 1.25rem,  // 20px
+  'font-size-xlg': 3.25rem,  // 52px
+);
 
-$
+$fontsWeight: (
+  'font-weight-thin': 300,
+  'font-weight-regular': 400,
+  'font-weight-bold': 700,
+);
+
+$fontsHeading: (
+  'h1-size': 2.31rem,
+  'h2-size': 1.5rem,
+  'h3-size': 1.25rem,
+  'h4-size': .9rem,
+);
+
+$fontsFamily: (
+  'font-snigle': 'Sniglet', 
+  'font-rubik': 'Rubik',
+  'font-patua': 'Patua One',
+  'font-lobster': 'Lobster',
+  'font-acme': 'Acme',
+  'font-public-sans': 'Public sans',
+);
+
+$buttons: (
+  "button-border-width": 1px,
+  "button-border-raadius": 8px
+);
 
 
 :root {
@@ -47,8 +74,24 @@ $
     --#{$key}: #{$val};
   }
 
-  @each $key, $font in $fontsWeight {
-    --#{$key}: #{$font};
+  @each $key, $val in $fontsSize {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $val in $fontsWeight {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $val in $fontsHeading {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $val in $fontsFamily {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $val in $buttons {
+    --#{$key}: #{$val};
   }
 }
 

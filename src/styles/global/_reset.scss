@@ -6,19 +6,23 @@
 }
 
 /* Remove default margin and border */
-*:where(:not(iframe, canvas, img, svg. video):not(svg *)) {
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   margin: 0;
   border: 0;
 }
 
 /* Prevent font size inflation */
 html {
-  height: 100%;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+  height: 100%;
   /* iOS fixi */
   height: -webkit-fill-available;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
@@ -36,7 +40,7 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
-  text-rendering: optimizedSpeed;
+  text-rendering: optimizeSpeed;
   min-height: 100vh;
   /* iOS fix */
   min-height: -webkit-fill-available;
