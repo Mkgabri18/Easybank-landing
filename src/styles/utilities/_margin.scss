@@ -1,0 +1,30 @@
+
+$marginIndex: (
+  "m": 'margin',
+  "mt": 'margin-top',
+  "mr": 'margin-right',
+  "mb": 'margin-bottom',
+  "ml": 'margin-left',
+  "mx": 'margin-left',
+  "my": 'margin-top'
+);
+
+@each $keyMargin, $valueMargin in $marginIndex {
+    @each $key, $value in $tokenSize {
+        @if $keyMargin == 'py' {
+            .#{$keyMargin}-#{$key} {
+                #{map-get($marginIndex, 'pt')}: #{$value};
+                #{map-get($marginIndex, 'pb')}: #{$value};
+            }
+        } @else if $keyMargin == 'px' {
+            .#{$keyMargin}-#{$key} {
+                #{map-get($marginIndex, 'pl')}: #{$value};
+                #{map-get($marginIndex, 'pr')}: #{$value};
+            }
+        } @else {
+            .#{$keyMargin}-#{$key} {
+                #{$valueMargin}: #{$value};
+            }
+        }
+    }
+}

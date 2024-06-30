@@ -64,6 +64,23 @@ $buttons: (
   "button-border-raadius": 8px
 );
 
+$tokenSize: (
+  "0": "0",
+  "1": "8px",
+  "2": "10px",
+  "3": "12px",
+  "4": "14px",
+  "5": "1rem",
+  "6": "18px",
+  "7": "20px",
+  "8": "24px",
+  "9": "28px",
+  "10": "32px",
+  "11": "36px",
+  "12": "40px",
+  "13": "44px",
+);
+
 
 :root {
   @each $name, $color in $colors {
@@ -96,6 +113,10 @@ $buttons: (
 
   @each $key, $size in $fontsSize {
     --#{$key}: #{$size};
+  }
+
+  @each $key, $size in $tokenSize {
+    --token-size-#{$key}: #{$size};
   }
 }
 

@@ -1,0 +1,30 @@
+
+$paddingIndex: (
+  "p": 'padding',
+  "pt": 'padding-top',
+  "pr": 'padding-right',
+  "pb": 'padding-bottom',
+  "pl": 'padding-left',
+  "px": 'padding-left',
+  "py": 'padding-top'
+);
+
+@each $keyPadding, $valuePadding in $paddingIndex {
+    @each $key, $value in $tokenSize {
+        @if $keyPadding == 'py' {
+            .#{$keyPadding}-#{$key} {
+                #{map-get($paddingIndex, 'pt')}: #{$value};
+                #{map-get($paddingIndex, 'pb')}: #{$value};
+            }
+        } @else if $keyPadding == 'px' {
+            .#{$keyPadding}-#{$key} {
+                #{map-get($paddingIndex, 'pl')}: #{$value};
+                #{map-get($paddingIndex, 'pr')}: #{$value};
+            }
+        } @else {
+            .#{$keyPadding}-#{$key} {
+                #{$valuePadding}: #{$value};
+            }
+        }
+    }
+}
