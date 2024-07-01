@@ -5,25 +5,27 @@ $marginIndex: (
   "mr": 'margin-right',
   "mb": 'margin-bottom',
   "ml": 'margin-left',
-  "mx": 'margin-left',
-  "my": 'margin-top'
+  "mx": (
+    "left": 'margin-left',
+    "right": 'margin-right'
+  ),
+  "my": (
+    "top": 'margin-top',
+    "bottom": 'margin-bottom'
+  )
 );
 
 @each $keyMargin, $valueMargin in $marginIndex {
-    @each $key, $value in $tokenSize {
-        @if $keyMargin == 'py' {
-            .#{$keyMargin}-#{$key} {
-                #{map-get($marginIndex, 'pt')}: #{$value};
-                #{map-get($marginIndex, 'pb')}: #{$value};
-            }
-        } @else if $keyMargin == 'px' {
-            .#{$keyMargin}-#{$key} {
-                #{map-get($marginIndex, 'pl')}: #{$value};
-                #{map-get($marginIndex, 'pr')}: #{$value};
+    @each $keySize, $valueSize in $tokenSize {
+        @if type-of($valueMargin) == 'map' {
+            .#{$keyMargin}-#{$keySize} {
+                @each $subKey, $subValue in $valueMargin {
+                    #{$subValue}: #{$valueSize};
+                }
             }
         } @else {
-            .#{$keyMargin}-#{$key} {
-                #{$valueMargin}: #{$value};
+            .#{$keyMargin}-#{$keySize} {
+                #{$valueMargin}: #{$valueSize};
             }
         }
     }

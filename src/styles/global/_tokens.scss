@@ -43,6 +43,13 @@ $fontsWeight: (
   'font-weight-bold': 700,
 );
 
+$fontsLeading: (
+  'leading-flat': 1,
+  'leading-fine': 1.15,
+  'leading-normal': 1.3,
+  'leading-loose': 1.5
+);
+
 $fontsHeading: (
   'h1-size': 2.31rem,
   'h2-size': 1.5rem,
@@ -100,6 +107,10 @@ $tokenSize: (
   }
 
   @each $key, $val in $fontsHeading {
+    --#{$key}: #{$val};
+  }
+
+  @each $key, $val in $fontsLeading {
     --#{$key}: #{$val};
   }
 

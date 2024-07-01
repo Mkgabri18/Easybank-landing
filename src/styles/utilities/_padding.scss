@@ -5,25 +5,27 @@ $paddingIndex: (
   "pr": 'padding-right',
   "pb": 'padding-bottom',
   "pl": 'padding-left',
-  "px": 'padding-left',
-  "py": 'padding-top'
+  "px": (
+    "left": 'padding-left',
+    "right": 'padding-right'
+  ),
+  "py": (
+    "top": 'padding-top',
+    "bottom": 'padding-bottom'
+  )
 );
 
 @each $keyPadding, $valuePadding in $paddingIndex {
-    @each $key, $value in $tokenSize {
-        @if $keyPadding == 'py' {
-            .#{$keyPadding}-#{$key} {
-                #{map-get($paddingIndex, 'pt')}: #{$value};
-                #{map-get($paddingIndex, 'pb')}: #{$value};
-            }
-        } @else if $keyPadding == 'px' {
-            .#{$keyPadding}-#{$key} {
-                #{map-get($paddingIndex, 'pl')}: #{$value};
-                #{map-get($paddingIndex, 'pr')}: #{$value};
+    @each $keySize, $valueSize in $tokenSize {
+        @if type-of($valuePadding) == 'map' {
+            .#{$keyPadding}-#{$keySize} {
+                @each $subKey, $subValue in $valuePadding {
+                    #{$subValue}: #{$valueSize};
+                }
             }
         } @else {
-            .#{$keyPadding}-#{$key} {
-                #{$valuePadding}: #{$value};
+            .#{$keyPadding}-#{$keySize} {
+                #{$valuePadding}: #{$valueSize};
             }
         }
     }
