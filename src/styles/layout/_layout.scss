@@ -32,22 +32,9 @@
 }
 
 
-.flex {
-    display: flex;
-    &-jc-sb {
-      justify-content: space-between;
-    }
-    &-jc-c {
-      justify-content: center;;
-    }
-    &-ai-c {
-      align-items: center;
-    }
-}
-
 //Visibility
 .hide-for-mobile {
-    @include breakpoint-down(medium) {
+    @include breakpoint-down(large) {
       display: none;
     }
 }

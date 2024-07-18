@@ -8,18 +8,18 @@ $colors: (
   'white': hsl(0, 0%, 100%),
 );
 
-// 640px, 1024px, 1400px
+// 640px, 1024px, 1440px
 $breakpoints-up: (
   "medium": 40rem,
   "large": 64rem,
-  "xlarge": 87.5rem
+  "xlarge": 90rem
 );
 
 // 639px, 1023px, 1399px
 $breakpoints-down: (
   "small": 39.9375rem,
   "medium": 63.9375rem,
-  "large": 87.4375rem
+  "large": 89.938rem
 );
 
 $zIndex: (
@@ -71,6 +71,8 @@ $buttons: (
   "button-border-raadius": 8px
 );
 
+$scaleIndex: "s-5", "s-4", "s-3", "s-2", "s-1", "s0", "s1", "s2", "s3", "s4", "s5";
+
 $tokenSize: (
   "0": "0",
   "1": "8px",
@@ -86,6 +88,13 @@ $tokenSize: (
   "11": "36px",
   "12": "40px",
   "13": "44px",
+);
+
+$widths: (
+  "w-full": "100%",
+  "w-half": "50%",
+  "w-third": "33.33%",
+  "w-quarter": "25%",
 );
 
 
@@ -129,6 +138,23 @@ $tokenSize: (
   @each $key, $size in $tokenSize {
     --token-size-#{$key}: #{$size};
   }
+
+  --scale: 1.5;
+  --transition: 0.5s ease;
+  --transition-fast: 0.25s ease;
+
+  --s-5: calc(var(--s-4) / var(--scale));
+  --s-4: calc(var(--s-3) / var(--scale));
+  --s-3: calc(var(--s-2) / var(--scale));
+  --s-2: calc(var(--s-1) / var(--scale));
+  --s-1: calc(var(--s0) / var(--scale));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--scale));
+  --s2: calc(var(--s1) * var(--scale));
+  --s3: calc(var(--s2) * var(--scale));
+  --s4: calc(var(--s3) * var(--scale));
+  --s5: calc(var(--s4) * var(--scale));
+
 }
 
 @each $name, $color in $colors {

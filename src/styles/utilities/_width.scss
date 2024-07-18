@@ -1,0 +1,10 @@
+
+// how import tokens from _token.scss
+@import '../tokens/width';
+
+// iterate widths obj with @each loop
+@each $key, $value in $widths {
+    .w-#{$key} {
+        width: $value;
+    }
+}
