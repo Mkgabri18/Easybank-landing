@@ -7,7 +7,7 @@
     "prebuild": "rimraf dist",
     "build": "npm run prebuild && webpack --mode=production",
     "build:dev": "npm run prebuild && webpack --mode=development",
-    "dev": "webpack-dev-server --mode=development"
+    "start": "webpack-dev-server --mode=development"
   },
   "keywords": [],
   "author": "",

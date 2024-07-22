@@ -5,7 +5,7 @@
 
 header.header
     .overlay.has-fade
-    nav.container.container--pall.flex.justify-between.items-center.py-5
+    nav.container.flex.justify-between.items-center.py-5
         a(href="/").header__logo
             img(src="./assets/logo.svg", alt="Easy Bank Logo")
         a(href="#")#btnHamburger.header__toggle.hide-for-desktop
@@ -17,8 +17,8 @@ header.header
             each item in navItems
                 a(href='#')= item
 
-        a(href="#" type="button").button.header__cta Request Invite
-
+        a(href="#" type="button").button.header__cta.header__cta--rainbow Request Invite
+        
     .header__menu.has-fade.hide-for-desktop
         each item in navItems
             a(href="#")= item

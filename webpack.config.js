@@ -1,11 +1,17 @@
 const path = require('path');
+// const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const PATHS = {
+  src: path.join(__dirname, "src"),
+  dist: path.join(__dirname, "dist"),
+};
 
 const config = {
     entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: PATHS.dist,
         filename: "js/[name].bundle.js",
     },
     devServer: {
@@ -17,8 +23,9 @@ const config = {
             template: path.join(__dirname, './src/templates/views/index.pug'),
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/bundle.css'
-        })
+            filename: 'css/[name].bundle.css'
+        }),
+
     ],
     module: {
         rules: [

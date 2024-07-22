@@ -1,11 +1,18 @@
+@property --color-hue {
+    syntax: "<number>";
+    initial-value: 0;
+    inherits: true;
+}
+
+@keyframes color-hue {
+    from { --color-hue: 0; }
+    to { --color-hue: 360; }
+}
+
 .header {
-    nav {
-        position: relative;
-        background-color: var(--white);
-    }
     &__logo {
         img {
-            width: 8.8125rem;
+            width: auto;
             height: 1.375rem;
         }
     }
@@ -70,10 +77,32 @@
         }
     }
     &__cta {
-        color: var(--white);
-        transition: opacity 300ms ease-in-out;
+        // color: var(--white);
+        // background: linear-gradient(to right, var(--lime-green), var(--bright-cyan));
+        --_color: var(--color, black);
+        border: .1rem solid var(--_color);
+        background: transparent;
+        color: var(--_color);
+
+        transition: 800ms ease-in-out;
+        padding: 4px 8px;
+        border-radius: 9px;
+        font-size: 16px;
         &:hover {
-            opacity: 0.75;
+            // opacity: 0.75;
+
+            //background: var(--_color);
+            box-shadow: 0 0 0 1em var(--_color) inset;
+            color: var(--white);
+        }
+
+        &--pink {
+            --color: #f06;
+        }
+
+        &--rainbow {
+            --color: hsl(var(--color-hue) 60%, 50%);
+            animation: 5s color-hue linear infinite;
         }
     }
 
@@ -106,11 +135,3 @@
     }
 }
 
-.nav {
-    .menu {
-        display: flex;
-        li {
-            margin: 0 5px;
-        }
-    }
-}
