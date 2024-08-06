@@ -12,3 +12,16 @@
   width: 100%;
   max-width: var(--layout-threshold);
 }
+
+.text {
+  --align: left;
+  &-left {
+    text-align: var(-align);
+  }
+  &-center {
+    --align: center;
+  }
+  &-right {
+    --align:right;
+  }
+}

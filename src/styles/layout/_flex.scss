@@ -19,7 +19,6 @@
 
   display: flex;
   flex-direction: var(--layout-direction);
-  align-items: var(--layout-align);
   gap: var(--layout-gap);
 
   &.column {

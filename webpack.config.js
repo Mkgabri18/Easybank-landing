@@ -1,7 +1,8 @@
 const path = require('path');
-// const glob = require("glob");
+const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname, "src"),
@@ -24,6 +25,9 @@ const config = {
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].bundle.css'
+        }),
+        new PurgeCSSPlugin({
+          paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         }),
 
     ],

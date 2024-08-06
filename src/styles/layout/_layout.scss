@@ -1,19 +1,39 @@
 // main
 .container {
-    max-width: 69.375rem; // 1110px
-    margin: 0 auto;
+    @include breakpoint-up(large) {
+        max-width: 69.375rem; // 1110px
+        margin: 0 auto;
+    }
 }
+
+.hide {
+    display: none;
+}
+  
+.block {
+    display: block;
+}
+
+.absoute {
+    position: absolute;
+}
+
+.inset-0 {
+    inset: 0;
+}
+
+  
 
 
 //Visibility
 .hide-for-mobile {
-    @include breakpoint-down(large) {
+    @include breakpoint-down(small) {
       display: none;
     }
 }
 
 .hide-for-desktop {
-    @include breakpoint-up(large) {
+    @include breakpoint-up(medium) {
         display: none;
     }
 }

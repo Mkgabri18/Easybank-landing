@@ -1,6 +1,14 @@
 
 // how import tokens from _token.scss
-@import '../tokens/width';
+// @use "../global/tokens" as tokens;
+
+$widths: (
+  "auto": auto,
+  "full": 100%,
+  "half": 50%,
+  "third": 33.33%,
+  "quarter": 25%,
+);
 
 // iterate widths obj with @each loop
 @each $key, $value in $widths {

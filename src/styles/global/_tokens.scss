@@ -6,6 +6,7 @@ $colors: (
   'light-grayish-blue': hsl(220, 16%, 96%),
   'veryLight-gray': hsl(0, 0%, 98%),
   'white': hsl(0, 0%, 100%),
+  'black': hsl(0, 11%, 5%)
 );
 
 // 640px, 1024px, 1440px
@@ -75,8 +76,8 @@ $scaleIndex: "s-5", "s-4", "s-3", "s-2", "s-1", "s0", "s1", "s2", "s3", "s4", "s
 
 $tokenSize: (
   "0": "0",
-  "1": "8px",
-  "2": "10px",
+  "1": "4px",
+  "2": "8px",
   "3": "12px",
   "4": "14px",
   "5": "1rem",
@@ -88,13 +89,7 @@ $tokenSize: (
   "11": "36px",
   "12": "40px",
   "13": "44px",
-);
-
-$widths: (
-  "w-full": "100%",
-  "w-half": "50%",
-  "w-third": "33.33%",
-  "w-quarter": "25%",
+  
 );
 
 
@@ -160,5 +155,11 @@ $widths: (
 @each $name, $color in $colors {
     .bg-#{$name} {
       background-color: var(--#{$name});
+  } 
+}
+
+@each $name, $color in $colors {
+    .text-#{$name} {
+      color: var(--#{$name});
   } 
 }

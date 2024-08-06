@@ -3,22 +3,31 @@
 //- variables
 - var navItems = ['Home', 'About', 'Contact', 'Blog', 'Careers'];
 
+//- style class
+-var navStyle = "container flex justify-between items-center p-5"
+-var btnMenu = "btnToggle flex column hide-for-desktop"
+-var menu = ""
+
+//- hs commads
+- var toggleMenu = "on click toggle .open on .header"
+
 header.header
-    .overlay.has-fade
-    nav.container.flex.justify-between.items-center.py-5
-        a(href="/").header__logo
-            img(src="./assets/logo.svg", alt="Easy Bank Logo")
-        a(href="#")#btnHamburger.header__toggle.hide-for-desktop
-            span
-            span
-            span
+    nav(class=navStyle)
+        a(href="/")
+            img(src="./assets/logo.svg", alt="Easy Bank Logo").w-auto.logo
+        a(href="#" class=btnMenu _=toggleMenu)#btnHamburger
+            span.bg-dark-blue
+            span.bg-dark-blue
+            span.bg-dark-blue   
 
         .header__links.hide-for-mobile
             each item in navItems
                 a(href='#')= item
 
-        a(href="#" type="button").button.header__cta.header__cta--rainbow Request Invite
+        a(href="#" type="button" data-type="main").button.hide-for-mobile Request Invite
         
-    .header__menu.has-fade.hide-for-desktop
-        each item in navItems
-            a(href="#")= item
+    .header__menu.has-fade.hide-for-desktop.hide.w-full.absolute
+        ul.header__list.bg-white
+            each item in navItems
+                li.text-center.text-dark-blue
+                    a(href="#")= item
