@@ -1,8 +1,7 @@
 // Aplico las reglas bases para los elementos html, como un reset
 
-
 html {
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -14,9 +13,9 @@ html, body {
 body {
     line-height: var(--leading-normal);
     color: var(--grayish-blue);
-    font-weight: var(--font-sise-thin);
+    font-weight: var(--font-weight-regular);
     font-family: var(--font-public-sans);
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-2);
     overflow-x: hidden;
 
     &.noscroll {
@@ -49,7 +48,7 @@ h2 {
 
 @include breakpoint-up(large) {
     body {
-        font-size: var(--font-size-lg); 
+        font-size: var(--font-size-3); 
     }
     h1 {
         font-size: calc(var(--h1-size) * 1.2); // 3.25rem 44.352px

@@ -2,12 +2,15 @@
 
 
 /** Styles */
-.bold {
-  font-weight: 600;
+.thin {
+  font-weight: 300;
 }
 .regular {
   font-weight: 400;
 }
-.italic {
-  font-style: italic;
+.bold {
+  font-weight: 700;
+}
+.black {
+  font-style: 900;
 }

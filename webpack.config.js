@@ -3,6 +3,7 @@ const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, "src"),
@@ -29,7 +30,11 @@ const config = {
         new PurgeCSSPlugin({
           paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         }),
-
+        new CopyWebpackPlugin({
+          patterns: [
+            { from: 'src/assets/fonts', to: 'assets/fonts' }
+          ]
+        })
     ],
     module: {
         rules: [
@@ -57,6 +62,16 @@ const config = {
               },
             ]
           },
+          {
+            test: /\.(ttf|eot|woff|woff2)$/,
+            use: {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: 'assets/fonts/' 
+              }
+            }
+          }
         ]
     }
 }

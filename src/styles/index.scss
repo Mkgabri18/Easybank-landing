@@ -1,5 +1,31 @@
 /* Google fonts */ 
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap'); */
+/** family */
+@font-face {
+  font-family: 'Public sans';
+  src: url('../assets/fonts/PublicSans-Light.ttf') format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public sans';
+  src: url('../assets/fonts/PublicSans-Regular.ttf') format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public sans';
+  src: url('../assets/fonts/PublicSans-Bold.ttf') format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public sans';
+  src: url('../assets/fonts/PublicSans-Black.ttf') format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
+  
 
 /* set layer to follow CUBE methodology */
 @layer global, layout, blocks, utilities;
