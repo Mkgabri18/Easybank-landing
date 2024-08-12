@@ -1,0 +1,19 @@
+.splitter {
+    > :last-child {
+      margin-top: 1.33rem; // to change with scale param
+    }
+  
+    @include breakpoint-up(medium) {
+      display: flex;
+  
+      > * {
+        flex-grow: 1;
+      }
+  
+      > :last-child {
+        margin-top: 0;
+        margin-left: 1.33rem; // to change with scale param
+        min-width: 22rem;
+      }
+    }
+  }

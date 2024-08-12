@@ -4,9 +4,10 @@
 - var navItems = ['Home', 'About', 'Contact', 'Blog', 'Careers'];
 
 //- style class
--var navStyle = "container flex justify-between items-center p-5"
--var btnMenu = "btnToggle flex column hide-for-desktop"
--var menu = ""
+-var navStyle = "flex justify-between items-center | p-5 | container"
+-var btnMenu = "flex column | hide-for-desktop | btnToggle"
+-var menu = "has-fade hide-for-desktop hide w-full absolute px-8 | menu-mobile"
+-var logo = "w-auto | logo"
 
 //- hs commads
 - var toggleMenu = "on click toggle .open on .header"
@@ -14,20 +15,20 @@
 header.header
     nav(class=navStyle)
         a(href="/")
-            img(src="./assets/logo.svg", alt="Easy Bank Logo").w-auto.logo
+            img(src="./assets/logo.svg", alt="Easy Bank Logo" class=logo)
         a(href="#" class=btnMenu _=toggleMenu)#btnHamburger
             span.bg-dark-blue
             span.bg-dark-blue
             span.bg-dark-blue   
 
-        .header__links.hide-for-mobile
+        .menu-links.flex.hide-for-mobile
             each item in navItems
-                a(href='#')= item
+                a(href='#' class="relative text-size-5 text-dark-blue | item")= item
 
         a(href="#" type="button" data-type="main").button.hide-for-mobile Request Invite
         
-    .header__menu.has-fade.hide-for-desktop.hide.w-full.absolute
-        ul.header__list.bg-white
+    div(class=menu)
+        ul.br-normal.mt-8.p-8.bg-white
             each item in navItems
-                li.text-center.text-dark-blue
+                li.py-3.text-center.text-dark-blue
                     a(href="#")= item

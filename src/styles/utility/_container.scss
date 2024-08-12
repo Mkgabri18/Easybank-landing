@@ -1,0 +1,12 @@
+// main
+.container {
+    @include breakpoint-up(large) {
+        max-width: 69.375rem; // 1110px
+        margin: 0 auto;
+    }
+}
+
+
+
+
+

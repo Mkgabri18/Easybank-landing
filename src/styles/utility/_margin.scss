@@ -1,0 +1,91 @@
+
+$marginIndex: (
+  "m": 'margin',
+  "mt": 'margin-top',
+  "mr": 'margin-right',
+  "mb": 'margin-bottom',
+  "ml": 'margin-left',
+  "mx": (
+    "left": 'margin-left',
+    "right": 'margin-right'
+  ),
+  "my": (
+    "top": 'margin-top',
+    "bottom": 'margin-bottom'
+  )
+);
+
+
+@each $keyMargin, $valueMargin in $marginIndex {
+    @each $keySize, $valueSize in $tokenSize {
+        @if type-of($valueMargin) == 'map' {
+            .#{$keyMargin}-#{$keySize} {
+                @each $subKey, $subValue in $valueMargin {
+                    #{$subValue}: #{$valueSize};
+                }
+            }
+        } @else {
+            .#{$keyMargin}-#{$keySize} {
+                #{$valueMargin}: #{$valueSize};
+            }
+        }
+    }
+}
+
+/* not work with PurgeCSS  */
+
+/* Custom margin with dinamyc value
+* example: on html .mb-[5px]
+*   .mb-\[5px\] {
+*      margin-bottom: 5px;
+*   } 
+*/
+
+/* $tokenCustomSize: (
+  "-20": "-20px",
+  "-19": "-19px",
+  "-18": "-18px",
+  "-17": "-17px",
+  "-16": "-16px",
+  "-15": "-15px",
+  "-14": "-14px",
+  "-13": "-13px",
+  "-12": "-12px",
+  "-11": "-11px",
+  "-10": "-10px",
+  "-9": "-9px",
+  "-8": "-8px",
+  "-7": "-7px",
+  "-6": "-6px",
+  "-5": "-5px",
+  "-4": "-4px",
+  "-3": "-3px",
+  "-2": "-2px",
+  "-1": "-1px",
+  "1": "1px",
+  "2": "2px",
+  "3": "3px",
+  "4": "4px",
+  "5": "5px",
+  "6": "6px",
+  "7": "7px",
+  "8": "8px",
+  "9": "9px",
+  "10": "10px",
+  "11": "11px",
+  "12": "12px",
+  "13": "13px",
+  "14": "14px",
+  "15": "15px",
+  "16": "16px",
+  "17": "17px",
+  "18": "18px",
+  "19": "19px",
+  "20": "20px",
+); */
+
+// @each $keySize, $valueSize in $tokenCustomSize {
+//    .mb-\[#{$keySize}px\] {
+//        margin-bottom: #{$valueSize};
+//    }
+//} 

@@ -29,6 +29,9 @@ const config = {
         }),
         new PurgeCSSPlugin({
           paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+          safelist: {
+            pattern: [/^mb-\d+px$/], // Regex to match your classes
+          },
         }),
         new CopyWebpackPlugin({
           patterns: [

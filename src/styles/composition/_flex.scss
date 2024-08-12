@@ -60,3 +60,30 @@
 }
 
 
+/**
+ *  Utility classes to control the shared --layout-X properties amongst the
+ *  layout classes
+ */
+
+/* Flex direction */
+.--column {
+  --layout-direction: column;
+}
+.--row {
+  --layout-direction: row;
+}
+/* helpers around the cross axis */
+.--start {
+  --layout-align: flex-start;
+}
+.--end {
+  --layout-align: flex-end;
+}
+.--center {
+  --layout-align: center;
+}
+.--stretch {
+  --layout-align: stretch;
+}
+
+

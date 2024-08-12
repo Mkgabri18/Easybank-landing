@@ -2,7 +2,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap'); */
 
 /* set layer to follow CUBE methodology */
-@layer global, layout, blocks, utilities;
+@layer global, composition, blocks, utilities;
 
 /* Files Global */
 @import "global/tokens";
@@ -11,33 +11,46 @@
 @import "global/global";
 
 
-/* Files Layout */
-@import "layout/center";
-@import "layout/fifty";
-@import "layout/flex";
-@import "layout/grid";
-@import "layout/layout";
-@import "layout/sidebar";
-@import "layout/utilities";
+/* Files composition 
+* This class have layout functionality
+*/
+@import "composition/center";
+@import "composition/fifty";
+@import "composition/flex";
+@import "composition/grid";
+@import "composition/sidebar";
+@import "composition/flow";
+@import "composition/splitter";
 
-/* Files Block */
+
+/* Files Utilities 
+* Have one job to do
+*/
+@import "utility/animation";
+@import "utility/click-area";
+@import "utility/margin";
+@import "utility/padding";
+@import "utility/scroll-container";
+@import "utility/typography";
+@import "utility/visibility";
+@import "utility/width";
+@import "utility/radius";
+@import "utility/wrapper";
+@import "utility/container";
+@import "utility/background";
+@import "utility/color";
+@import "utility/position";
+@import "utility/text";
+
+/* Files Block
+* Files Component and user intertface elements
+*/
+@import "block/header.scss";
+@import "block/footer.scss";
+@import "block/button.scss";
 
 
 
-/* Files Utilities */
-@import "utilities/animation";
-@import "utilities/click-area";
-@import "utilities/margin";
-@import "utilities/padding";
-@import "utilities/scroll-container";
-@import "utilities/typography";
-@import "utilities/visually-hidden";
-@import "utilities/width";
-
-/* Files Component */
-@import "components/header.scss";
-@import "components/footer.scss";
-@import "components/button.scss";
 
 
 /** family */

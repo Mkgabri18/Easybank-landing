@@ -1,0 +1,13 @@
+
+@each $key, $value in $textAlign {
+    .text-#{$key} {
+        text-align: #{$value};
+    }
+}
+
+@each $key, $value in $tokenSize {
+    .text-size-#{$key} {
+        font-size: #{$value};
+    }
+}
+
