@@ -1,0 +1,21 @@
+.hero {
+    .thumbnail {
+        min-height: 55vh;
+        background: url(../assets/image-mockups.png) no-repeat bottom, 
+                    url(../assets/bg-intro-mobile.svg) no-repeat top;
+        background-size: cover;
+
+    }
+}
+
+@include breakpoint-up(large) {
+    .hero {
+        flex-direction: row;
+        .thumbnail {
+            min-height: 60vh;
+            background: url(../assets/image-mockups.png) no-repeat bottom, 
+                    url(../assets/bg-intro-desktop.svg) no-repeat top;
+        }
+    }
+
+}

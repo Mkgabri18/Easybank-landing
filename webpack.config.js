@@ -27,12 +27,12 @@ const config = {
         new MiniCssExtractPlugin({
             filename: 'css/[name].bundle.css'
         }),
-        new PurgeCSSPlugin({
-          paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-          safelist: {
-            pattern: [/^mb-\d+px$/], // Regex to match your classes
-          },
-        }),
+        // new PurgeCSSPlugin({
+        //   paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        //   safelist: {
+        //     pattern: [/^mb-\d+px$/],
+        //   },
+        // }),
         new CopyWebpackPlugin({
           patterns: [
             { from: 'src/assets/fonts', to: 'assets/fonts' }

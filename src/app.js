@@ -3,6 +3,9 @@ import _hyperscript from 'hyperscript.org';
 
 import './assets/logo.svg';
 import './assets/logo-white.svg';
+import './assets/bg-intro-mobile.svg';
+import './assets/bg-intro-desktop.svg';
+import './assets/image-mockups.png'
 
 _hyperscript.browserInit();
 
