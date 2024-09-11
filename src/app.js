@@ -5,7 +5,15 @@ import './assets/logo.svg';
 import './assets/logo-white.svg';
 import './assets/bg-intro-mobile.svg';
 import './assets/bg-intro-desktop.svg';
-import './assets/image-mockups.png'
+import './assets/image-mockups.png';
+import './assets/icon-api.svg';
+import './assets/icon-budgeting.svg';
+import './assets/icon-onboarding.svg';
+import './assets/icon-online.svg';
+import './assets/image-confetti.jpg';
+import './assets/image-currency.jpg';
+import './assets/image-restaurant.jpg';
+import './assets/image-plane.jpg';
 
 _hyperscript.browserInit();
 

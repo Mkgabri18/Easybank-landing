@@ -1,0 +1,12 @@
+.container {
+    width: 100%;
+    &--sm {
+        max-width: 39.9375rem;
+    }
+    &-md {
+        max-width: 63.9375rem;
+    }
+    &-lg {
+        max-width: 89.938rem;
+    }
+}

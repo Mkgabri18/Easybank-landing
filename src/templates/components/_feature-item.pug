@@ -1,0 +1,7 @@
+//- feature-item.pug component
+
+mixin feature-item(image, title, description)
+    .feature-item.text-center.text-left--lg
+        img.mx-auto--only-sm.mb-7(src=image, alt="")
+        h3.title.text-size-7.mb-5= title
+        p.description.text-size-4= description 

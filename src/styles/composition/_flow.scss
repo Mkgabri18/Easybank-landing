@@ -1,3 +1,27 @@
 .flow > * + * {
     margin-top: var(--flow-space, 1rem);
+}
+
+.flow--md > * + * {
+  @include breakpoint-up(medium) {
+    margin-top: var(--flow-space, 1rem);
   }
+}
+
+@include breakpoint-up(large) {
+  .flow--lg > * + * {
+    margin-top: var(--flow-space, 1rem);
+  }
+}
+
+@include breakpoint-down(medium) {
+  .flow--only-sm > * + * {
+    margin-top: var(--flow-space, 1rem);
+  }
+}
+
+.flow--only-md > * + * {
+  @include breakpoint-down(large) {
+    margin-top: var(--flow-space, 1rem);
+  }
+}

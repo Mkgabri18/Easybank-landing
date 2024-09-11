@@ -1,0 +1,8 @@
+.article {
+    &_body {
+        gap: 2rem;
+        & > * {
+            flex: 1;
+        }
+    }
+}

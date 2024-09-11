@@ -6,6 +6,7 @@
  * --layout-align: sets align-items
  */
 .flex {
+  $root: &;
   --layout-gap: 0;
   --layout-direction: row;
 
@@ -21,8 +22,15 @@
   flex-direction: var(--layout-direction);
   gap: var(--layout-gap);
 
+  &.row {
+    flex-direction: var(--layout-direction);
+  }
   &.column {
     --layout-direction: column;
+    flex-direction: var(--layout-direction);
+  }
+  &.column-reverse {
+    --layout-direction: column-reverse;
     flex-direction: var(--layout-direction);
   }
   &.content-center {
@@ -57,8 +65,45 @@
     --layout-justify: space-between;
     justify-content: var(--layout-justify);
   }
+
+  @include breakpoint-up(large) {
+  
+    &--lg {
+      display: flex;
+    }
+    &--lg.row--lg {
+      --layout-direction: row;
+      flex-direction: var(--layout-direction);
+    }
+    &--lg.column--lg {
+      --layout-direction: column;
+      flex-direction: var(--layout-direction);
+    }
+    &--lg.row-reverse--lg {
+      --layout-direction: row-reverse;
+      flex-direction: var(--layout-direction);
+    }
+    &--lg.justify-center--lg {
+      --layout-justify: center;
+      justify-content: var(--layout-justify);
+    }
+  }
 }
 
+
+@include breakpoint-up(large) {
+/*   .lg\:flex {
+    display: flex;
+  }
+  .lg\:row-reverse {
+    --layout-direction: row-reverse;
+    flex-direction: var(--layout-direction);
+  }
+  .lg\:column-reverse {
+    --layout-direction: column-reverse;
+    flex-direction: var(--layout-direction);
+  } */
+}
 
 /**
  *  Utility classes to control the shared --layout-X properties amongst the

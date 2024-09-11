@@ -13,6 +13,10 @@
   white-space: nowrap;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .hide {
   display: none;
 }
@@ -21,8 +25,16 @@
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .inline-block {
   display: inline-block;
+}
+
+.inline-flex {
+  display: inline-flex;
 }
 
 

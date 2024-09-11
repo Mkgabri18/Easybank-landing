@@ -13,33 +13,36 @@ include ../mixins/_svgDispatcher.pug
 - var linkList = "flex column text-size-5 text-white | link-list col1"
 
 footer(class=footer)
-    .mb-12.inline-block
-        a(href='#')
-            img(src="./assets/logo-white.svg", alt="Logo in Foooter")
-    .flex.justify-center.mb-7.social
-        a.item(href="#" alt="Facebook")
-            +svgIcon('facebook')
-        a.item(href="#" alt="Instagram")
-            +svgIcon('instagram')
-        a.item(href="#" alt="Twitter")
-            +svgIcon('twitter')
-        a.item(href="#" alt="Pinterest")
-            +svgIcon('pinterest')
-        a.item(href="#" alt="Youtube")
-            +svgIcon('youtube')
+    .footer_wrapper.container.flex--lg
+        .sub-section1.mr-30--lg
+            .mb-12.inline-block
+                a(href='#')
+                    img(src="./assets/logo-white.svg", alt="Logo in Foooter")
+            .flex.justify-center.mb-7.social
+                a.item(href="#" alt="Facebook")
+                    +svgIcon('facebook')
+                a.item(href="#" alt="Instagram")
+                    +svgIcon('instagram')
+                a.item(href="#" alt="Twitter")
+                    +svgIcon('twitter')
+                a.item(href="#" alt="Pinterest")
+                    +svgIcon('pinterest')
+                a.item(href="#" alt="Youtube")
+                    +svgIcon('youtube')
+        .sub-section2
+            .flex.column.mb-10.navigation
+                ul(class=linkList)
+                    each item in footerCol1
+                        a(href='#' class='text-white | link')= item
 
-    .flex.column.mb-10.navigation
-        ul(class=linkList)
-            each item in footerCol1
-                a(href='#' class='text-white | link')= item
+                ul(class=linkList)
+                    each item in footerCol2
+                        a(href='#' class='text-white | link')= item
 
-        ul(class=linkList)
-            each item in footerCol2
-                a(href='#' class='text-white | link')= item
+        .sub-section3
+            .cta
+                a(href='#' type="button" data-type="main").button Request Invitation
 
-    .cta.my-10
-        a(href='#' type="button" data-type="main").button Request Invitation
-
-    .text-size-3.text-white.copyright &copy; EasyBank. All Rights Reserved
+            .text-size-3.text-white.copyright.mt-10 &copy; EasyBank. All Rights Reserved
 
 

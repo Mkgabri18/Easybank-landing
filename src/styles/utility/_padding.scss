@@ -16,19 +16,55 @@ $paddingIndex: (
 );
 
 @each $keyPadding, $valuePadding in $paddingIndex {
-    @each $keySize, $valueSize in $tokenSize {
-        @if type-of($valuePadding) == 'map' {
-            .#{$keyPadding}-#{$keySize} {
-                @each $subKey, $subValue in $valuePadding {
-                    #{$subValue}: #{$valueSize};
-                }
-            }
-        } @else {
-            .#{$keyPadding}-#{$keySize} {
-                #{$valuePadding}: #{$valueSize};
-            }
+  @each $keySize, $valueSize in $tokenSize {
+    @if type-of($valuePadding) == 'map' {
+      .#{$keyPadding}-#{$keySize} {
+        @each $subKey, $subValue in $valuePadding {
+          #{$subValue}: #{$valueSize};
         }
+      }
+    } @else {
+      .#{$keyPadding}-#{$keySize} {
+        #{$valuePadding}: #{$valueSize};
+      }
     }
+  }
+
+  @each $keySize, $valueSize in $tokenSize {
+    @if type-of($valuePadding) == 'map' {
+      @include breakpoint-up(medium) { 
+        .#{$keyPadding}-#{$keySize}--md {
+          @each $subKey, $subValue in $valuePadding {
+            #{$subValue}: #{$valueSize};
+          }
+        } 
+      }
+    } @else {
+      @include breakpoint-up(medium) { 
+        .#{$keyPadding}-#{$keySize}--md {
+          #{$valuePadding}: #{$valueSize};
+        }
+      }
+    }
+  }
+
+  @each $keySize, $valueSize in $tokenSize {
+    @if type-of($valuePadding) == 'map' {
+      @include breakpoint-up(medium) { 
+        .#{$keyPadding}-#{$keySize}--lg {
+          @each $subKey, $subValue in $valuePadding {
+            #{$subValue}: #{$valueSize};
+          }
+        } 
+      }
+    } @else {
+      @include breakpoint-up(medium) { 
+        .#{$keyPadding}-#{$keySize}--lg {
+          #{$valuePadding}: #{$valueSize};
+        }
+      }
+    }
+  }
 }
 
 

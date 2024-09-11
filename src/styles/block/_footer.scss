@@ -23,7 +23,7 @@
         @include breakpoint-up(large) {
             flex-direction: row;
             justify-content: center;
-            gap: 2rem;
+            gap: 4rem;
         }
     }
     .link-list {
@@ -72,5 +72,10 @@
             align-self: end;
             justify-self: end;
         }
+    }
+
+
+    .sub-section2 {
+        margin-right: auto;
     }
 }

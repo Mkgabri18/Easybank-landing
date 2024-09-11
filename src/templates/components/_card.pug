@@ -1,0 +1,9 @@
+//- card.pug mixins card
+
+mixin card(image, title, description)
+    .card.br-rounded.overflow-hidden.bg-white.text-left
+        .card_thumb
+            img(src=image, alt="").aspect-4-3.object-cover
+        .card_body.p-7.pb-9
+            h3.ellipsis-2.title.text-size-7.mb-5= title
+            p.description.ellipsis-4.mb-0.text-size-4= description 

@@ -1,16 +1,18 @@
 $colors: (
-  'dark-blue': hsl(233, 26%, 24%),
-  'lime-green': hsl(136, 65%, 51%),
-  'bright-cyan': hsl(192, 70%, 51%),
-  'grayish-blue': hsl(233, 8%, 62%),
-  'light-grayish-blue': hsl(220, 16%, 96%),
-  'veryLight-gray': hsl(0, 0%, 98%),
-  'white': hsl(0, 0%, 100%),
-  'black': hsl(0, 11%, 5%)
+  'dark-blue': hsla(233, 26%, 24%, 1),
+  'lime-green': hsla(136, 65%, 51%, 1),
+  'bright-cyan': hsla(192, 70%, 51%, 1),
+  'grayish-blue': hsla(233, 8%, 62%, 1),
+  'light-grayish-blue': hsla(220, 16%, 96%, 1),
+  'veryLight-gray': hsla(0, 0%, 98%, 1),
+  'white': hsla(0, 0%, 100%, 1),
+  'black': hsla(0, 11%, 5%, 1),
+  'white-90': hsla(0, 0%, 100%, 0.9)
 );
 
-// 640px, 1024px, 1440px
+// 325px, 640px, 1024px, 1440px
 $breakpoints-up: (
+  "small": 20.3125rem,
   "medium": 40rem,
   "large": 64rem,
   "xlarge": 90rem
@@ -104,7 +106,24 @@ $tokenSize: (
   "11": "36px",
   "12": "40px",
   "13": "44px",
-  
+  "14": "48px",
+  "15": "52px",
+  "16": "56px",
+  "17": "60px",
+  "18": "64px",
+  "19": "68px",
+  "20": "72px", 
+  "21": "76px",
+  "22": "80px",
+  "23": "84px",
+  "24": "88px",
+  "25": "92px",
+  "26": "96px",
+  "27": "100px",
+  "28": "104px",
+  "29": "108px",
+  "30": "112px",
+
 );
 
 :root {
@@ -143,6 +162,17 @@ $tokenSize: (
   @each $key, $size in $tokenSize {
     --token-size-#{$key}: #{$size};
   }
+
+  --prefix-brand: 'eb';
+
+  --accent-color: var(--lime-green);
+  --accent-color-hover: var(--bright-cyan);
+  --accent-color-focus: var(--bright-cyan);
+  --accent-color-active: var(--bright-cyan);
+  --accent-color-disabled: var(--light-grayish-blue);
+
+  --hyperlink-color: var(--dark-blue);
+  --hyperlink-color-hover: var(--lime-green);
 
   --scale: 1.5;
   --transition: 0.5s ease;
