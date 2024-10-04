@@ -30,12 +30,12 @@ footer(class=footer)
                 a.item(href="#" alt="Youtube")
                     +svgIcon('youtube')
         .sub-section2
-            .flex.column.mb-10.navigation
-                ul(class=linkList)
+            nav.flex.column.mb-10.navigation
+                ul.linkList
                     each item in footerCol1
                         a(href='#' class='text-white | link')= item
 
-                ul(class=linkList)
+                ul.linkList
                     each item in footerCol2
                         a(href='#' class='text-white | link')= item
 
