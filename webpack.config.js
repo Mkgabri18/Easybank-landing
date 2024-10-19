@@ -33,9 +33,11 @@ const config = {
           ]
         }),
         new PurgeCSSPlugin({
-          paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+          paths: () => glob.sync(`${PATHS.src}/templates/**/*.pug`, { nodir: true }),
           safelist: {
-            deep: [/^xxl:/, /^xl:/, /^lg:/, /^md:/],
+            standard: ["lg", /@lg$/],
+            deep: [/^xxl:/, /^xl:/, /@lg$/, /^md:/],
+            greedy: [/@lg$/]
           },
         })
     ],

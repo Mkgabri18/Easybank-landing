@@ -5,8 +5,9 @@
  * --layout-direction: sets flex-direction
  * --layout-align: sets align-items
  */
+
+
 .flex {
-  $root: &;
   --layout-gap: 0;
   --layout-direction: row;
 
@@ -21,88 +22,94 @@
   display: flex;
   flex-direction: var(--layout-direction);
   gap: var(--layout-gap);
-
-  &.row {
-    flex-direction: var(--layout-direction);
-  }
-  &.column {
-    --layout-direction: column;
-    flex-direction: var(--layout-direction);
-  }
-  &.column-reverse {
-    --layout-direction: column-reverse;
-    flex-direction: var(--layout-direction);
-  }
-  &.content-center {
-    --layout-align: center;
-    align-content: var(--layout-align);
-  }
-  &.content-start {
-    --layout-align: start;
-    align-content: var(--layout-align);
-  }
-  &.content-end {
-    --layout-align: end;
-    align-content: var(--layout-align);
-  }
-  &.items-center {
-    align-items: var(--layout-items-align);
-  }
-  &.justify-center {
-    justify-content: var(--layout-justify);
-  }
-  &.justify-start {
-    --layout-justify: start;
-    justify-content: var(--layout-justify);
-  }
-  
-  &.justify-end {
-    --layout-justify: end;
-    justify-content: var(--layout-justify);
-  }
-  
-  &.justify-between {
-    --layout-justify: space-between;
-    justify-content: var(--layout-justify);
-  }
-
-  @include breakpoint-up(large) {
-  
-    &--lg {
-      display: flex;
-    }
-    &--lg.row--lg {
-      --layout-direction: row;
-      flex-direction: var(--layout-direction);
-    }
-    &--lg.column--lg {
-      --layout-direction: column;
-      flex-direction: var(--layout-direction);
-    }
-    &--lg.row-reverse--lg {
-      --layout-direction: row-reverse;
-      flex-direction: var(--layout-direction);
-    }
-    &--lg.justify-center--lg {
-      --layout-justify: center;
-      justify-content: var(--layout-justify);
-    }
-  }
 }
 
+.column {
+  --layout-direction: column;
+  flex-direction: var(--layout-direction);
+}
+
+.row {
+  flex-direction: var(--layout-direction);
+}
+
+.column-reverse {
+  --layout-direction: column-reverse;
+  flex-direction: var(--layout-direction);
+}
+
+.row-reverse {
+  --layout-direction: row-reverse;
+  flex-direction: var(--layout-direction);
+}
+
+.content-center {
+  align-content: var(--layout-align);
+}
+
+.content-start {
+  --layout-align: start;
+  align-content: var(--layout-align);
+}
+
+.content-end {
+  --layout-align: end;
+  align-content: var(--layout-align);
+}
+
+.items-center {
+  align-items: var(--layout-items-align);
+}
+
+.items-start {
+  --layout-items-align: flex-start;
+  align-items: var(--layout-items-align);
+}
+
+.items-end {
+  --layout-items-align: flex-end;
+  align-items: var(--layout-items-align);
+}
+.justify-center {
+  justify-content: var(--layout-justify);
+}
+.justify-start {
+  --layout-justify: start;
+  justify-content: var(--layout-justify);
+}
+
+.justify-end {
+  --layout-justify: end;
+  justify-content: var(--layout-justify);
+}
+
+.justify-between {
+  --layout-justify: space-between;
+  justify-content: var(--layout-justify);
+}
 
 @include breakpoint-up(large) {
-/*   .lg\:flex {
+  .flex\@lg {
     display: flex;
   }
-  .lg\:row-reverse {
+
+  .row-reverse\@lg {
     --layout-direction: row-reverse;
     flex-direction: var(--layout-direction);
   }
-  .lg\:column-reverse {
-    --layout-direction: column-reverse;
+
+  .column\@lg {
+    --layout-direction: column;
     flex-direction: var(--layout-direction);
-  } */
+  }
+  .justify-center\@lg {
+    --layout-justify: center;
+    justify-content: var(--layout-justify);
+  }
+  .row\@lg {
+    --layout-direction: row;
+    flex-direction: var(--layout-direction);
+  }
 }
 
 /**
