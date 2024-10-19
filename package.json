@@ -30,6 +30,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "hyperscript.org": "^0.9.12"
+    "hyperscript.org": "^0.9.12",
+    "js-toolbox-mk": "^1.1.0"
   }
 }

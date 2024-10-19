@@ -1,5 +1,9 @@
 import style from './styles/index.scss';
 import _hyperscript from 'hyperscript.org';
+// Custom npm 
+import ClassList from 'js-toolbox-mk/src/classList.js';
+import { selectId, select, selectAll } from 'js-toolbox-mk/src/selectors';
+import 'js-toolbox-mk/src/mouseEvent.js';
 
 import './assets/logo.svg';
 import './assets/logo-white.svg';
@@ -19,6 +23,18 @@ _hyperscript.browserInit();
 
 console.log("Hello World, time to init")
 
+// My npm Library for DOM manipulation
+let $burger = selectId('btnHamburger');
+let $header = select('.header')
+
+$burger.onClick(toggleMenu)
+
+function toggleMenu() {
+    ClassList($header).toggle('open')
+}
+
+
+// JS code for toggle menu
 // const menuHamburger = document.getElementById('btnHamburger');
 // const header = document.querySelector('.header');
 // const fadeElems = document.querySelectorAll('.has-fade');
