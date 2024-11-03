@@ -5,9 +5,7 @@
  * --layout-direction: sets flex-direction
  * --layout-align: sets align-items
  */
-
-
-.flex {
+ :root {
   --layout-gap: 0;
   --layout-direction: row;
 
@@ -18,7 +16,9 @@
   --layout-justify: center;
   --layout-item-justify: center;
   --layout-self-justify: center;
+ }
 
+.flex {
   display: flex;
   flex-direction: var(--layout-direction);
   gap: var(--layout-gap);
@@ -88,19 +88,34 @@
   justify-content: var(--layout-justify);
 }
 
-@include breakpoint-up(large) {
-  .flex\@lg {
-    display: flex;
-  }
+.flex-columm {
+  --layout-direction: column;
+  @extend .flex;
+}
 
+.flex-row-reverse {
+  --layout-direction: row-reverse;
+  @extend .flex;
+}
+
+@include breakpoint-up(large) {
+  .flex\@lg {  
+    display: flex;
+    flex-direction: var(--layout-direction);
+    gap: var(--layout-gap);
+  }
+  .row\@lg {
+    --layout-direction: row;
+  }
   .row-reverse\@lg {
     --layout-direction: row-reverse;
-    flex-direction: var(--layout-direction);
   }
-
   .column\@lg {
     --layout-direction: column;
     flex-direction: var(--layout-direction);
+  }
+  .column-reverse\@lg {
+    --layout-direction: column-reverse;
   }
   .justify-center\@lg {
     --layout-justify: center;
@@ -123,6 +138,9 @@
 }
 .--row {
   --layout-direction: row;
+}
+.--row-reverse {
+  --layout-direction: row-reverse;
 }
 /* helpers around the cross axis */
 .--start {
