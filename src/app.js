@@ -1,19 +1,19 @@
-import style from './styles/index.scss';
+import './styles/index.scss';
 import _hyperscript from 'hyperscript.org';
 
 import './assets/logo.svg';
 import './assets/logo-white.svg';
 import './assets/bg-intro-mobile.svg';
 import './assets/bg-intro-desktop.svg';
-import './assets/image-mockups.png';
+import './assets/image-mockups.webp';
 import './assets/icon-api.svg';
 import './assets/icon-budgeting.svg';
 import './assets/icon-onboarding.svg';
 import './assets/icon-online.svg';
-import './assets/image-confetti.jpg';
-import './assets/image-currency.jpg';
-import './assets/image-restaurant.jpg';
-import './assets/image-plane.jpg';
+import './assets/image-confetti.webp';
+import './assets/image-currency.webp';
+import './assets/image-restaurant.webp';
+import './assets/image-plane.webp';
 
 _hyperscript.browserInit();
 

@@ -19,25 +19,27 @@ footer(class=footer)
                 a(href='#')
                     img(src="./assets/logo-white.svg", alt="Logo in Foooter")
             .flex.justify-center.mb-7.social
-                a.item(href="#" alt="Facebook")
+                a.item.facebook(href="#" alt="Facebook")
                     +svgIcon('facebook')
-                a.item(href="#" alt="Instagram")
+                a.item.instagram(href="#" alt="Instagram")
                     +svgIcon('instagram')
-                a.item(href="#" alt="Twitter")
+                a.item.twitter(href="#" alt="Twitter")
                     +svgIcon('twitter')
-                a.item(href="#" alt="Pinterest")
+                a.item.pinterest(href="#" alt="Pinterest")
                     +svgIcon('pinterest')
-                a.item(href="#" alt="Youtube")
+                a.item.youtube(href="#" alt="Youtube")
                     +svgIcon('youtube')
         .sub-section2
             nav.flex.column.mb-10.navigation
                 ul.linkList
                     each item in footerCol1
-                        a(href='#' class='text-white | link')= item
+                        li.text-white.link
+                            a(href='#')= item
 
                 ul.linkList
                     each item in footerCol2
-                        a(href='#' class='text-white | link')= item
+                        li.text-white.link
+                            a(href='#')= item
 
         .sub-section3
             .cta

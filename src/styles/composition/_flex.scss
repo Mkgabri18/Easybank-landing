@@ -16,7 +16,11 @@
   --layout-justify: center;
   --layout-item-justify: center;
   --layout-self-justify: center;
- }
+}
+
+
+
+@include render('flex') {
 
 .flex {
   display: flex;
@@ -98,6 +102,8 @@
   @extend .flex;
 }
 
+
+
 @include breakpoint-up(large) {
   .flex\@lg {  
     display: flex;
@@ -156,4 +162,4 @@
   --layout-align: stretch;
 }
 
-
+}

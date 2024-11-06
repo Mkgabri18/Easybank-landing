@@ -1,7 +1,7 @@
 .hero {
     &_thumbnail {
         min-height: 55vh;
-        background: url(../assets/image-mockups.png) no-repeat bottom, 
+        background: url(../assets/image-mockups.webp) no-repeat bottom, 
                     url(../assets/bg-intro-mobile.svg) no-repeat top;
         background-size: cover;
 
@@ -13,7 +13,7 @@
         &_thumbnail {
             min-width: 60%;
             min-height: 80vh;
-            background: url(../assets/image-mockups.png) no-repeat bottom 60% right 30%, 
+            background: url(../assets/image-mockups.webp) no-repeat bottom 60% right 30%, 
                     url(../assets/bg-intro-desktop.svg) no-repeat bottom left 14%
         }
     }

@@ -40,6 +40,14 @@ $textAlign: (
   'justify': 'justify'
 );
 
+$widths: (
+  "auto": auto,
+  "full": 100%,
+  "half": 50%,
+  "third": 33.33%,
+  "quarter": 25%,
+);
+
 $fontsSize: (
   'font-size-00': .5rem, // 8px
   'font-size-0': .75rem, // 12px

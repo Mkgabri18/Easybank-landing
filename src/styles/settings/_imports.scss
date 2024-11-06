@@ -1,0 +1,45 @@
+$imports: (
+   global: (
+    'tokens',
+    'reset',
+    'mixins',
+    'global'
+   ),
+   composition: (
+    'center',
+    'fifty',
+    'flex',
+    'grid',
+    'row',
+    'sidebar',
+    'flow',
+    'splitter'
+   ),
+   utility: (
+    'animation',
+    'click-area',
+    'margin',
+    'padding',
+    'scroll-container',
+    'typography',
+    'visibility',
+    'width',
+    'radius',
+    'wrapper',
+    'container',
+    'background',
+    'color',
+    'position',
+    'text',
+    'aspect-ratio',
+    'object-fit'
+   ),
+   block: (
+    'header',
+    'footer',
+    'button',
+    'hero',
+    'feature',
+    'articles',
+   )
+);

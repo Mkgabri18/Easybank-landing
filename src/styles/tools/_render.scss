@@ -1,0 +1,9 @@
+$layer: null !default;
+@mixin render($name) {
+   // @debug "render func: #{$name} #{$layer}";
+   // @debug "exist map in import #{map-get($imports, $layer)}";
+   // @debug "find item #{index(map-get($imports, $layer), $name)}";
+   @if(index(map-get($imports, $layer), $name)) {
+      @content;
+   }
+}
