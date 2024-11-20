@@ -1,3 +1,5 @@
+@use '../global/mixins' as bp;
+
 /**
  * Visually hides element from users
  */
@@ -40,13 +42,13 @@
 
 //Visibility
 .hide-for-mobile {
-  @include breakpoint-down(small) {
+  @include bp.breakpoint-down(small) {
     display: none;
   }
 }
 
 .hide-for-desktop {
-  @include breakpoint-up(medium) {
+  @include bp.breakpoint-up(medium) {
       display: none;
   }
 }

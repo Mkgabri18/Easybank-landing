@@ -1,8 +1,23 @@
+@use '../global/mixins' as bp;
+
 // main
 .container {
-    @include breakpoint-up(large) {
+    @include bp.breakpoint-up(large) {
         max-width: 69.375rem; // 1110px
         margin: 0 auto;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+    &[data-size="small"] {
+        max-width: 39.9375rem;
+    }
+    &[data-size="medium"] {
+        max-width: 63.9375rem;
+    }
+    &[data-size="large"] {
+        max-width: 89.938rem;
     }
 }
 

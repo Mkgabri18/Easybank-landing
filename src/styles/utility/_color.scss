@@ -1,3 +1,5 @@
+@use "../global/tokens" as *;
+
 @each $name, $color in $colors {
     .text-#{$name} {
       color: var(--#{$name});

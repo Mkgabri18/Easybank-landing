@@ -1,4 +1,5 @@
-// Aplico las reglas bases para los elementos html, como un reset
+@use 'mixins' as bp;
+/* Aplico las reglas bases para los elementos html, como un reset */
 
 html {
     overflow-x: hidden;
@@ -58,7 +59,7 @@ p {
     margin-bottom: 2.25rem;
 }
 
-@include breakpoint-up(large) {
+@include bp.breakpoint-up(large) {
     body {
         font-size: var(--font-size-3); 
     }

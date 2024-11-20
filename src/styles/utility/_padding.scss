@@ -1,3 +1,6 @@
+@use 'sass:meta'; 
+@use '../global/mixins' as bp;
+@use '../global/tokens' as *;
 
 $paddingIndex: (
   "p": 'padding',
@@ -17,7 +20,7 @@ $paddingIndex: (
 
 @each $keyPadding, $valuePadding in $paddingIndex {
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
+    @if meta.type-of($valuePadding) == 'map' {
       .#{$keyPadding}-#{$keySize} {
         @each $subKey, $subValue in $valuePadding {
           #{$subValue}: #{$valueSize};
@@ -31,8 +34,8 @@ $paddingIndex: (
   }
 
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
-      @include breakpoint-up(medium) { 
+    @if meta.type-of($valuePadding) == 'map' {
+      @include bp.breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--md {
           @each $subKey, $subValue in $valuePadding {
             #{$subValue}: #{$valueSize};
@@ -40,7 +43,7 @@ $paddingIndex: (
         } 
       }
     } @else {
-      @include breakpoint-up(medium) { 
+      @include bp.breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--md {
           #{$valuePadding}: #{$valueSize};
         }
@@ -49,8 +52,8 @@ $paddingIndex: (
   }
 
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
-      @include breakpoint-up(medium) { 
+    @if meta.type-of($valuePadding) == 'map' {
+      @include bp.breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--lg {
           @each $subKey, $subValue in $valuePadding {
             #{$subValue}: #{$valueSize};
@@ -58,7 +61,7 @@ $paddingIndex: (
         } 
       }
     } @else {
-      @include breakpoint-up(medium) { 
+      @include bp.breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--lg {
           #{$valuePadding}: #{$valueSize};
         }

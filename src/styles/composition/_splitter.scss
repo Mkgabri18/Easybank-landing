@@ -1,9 +1,11 @@
+@use "../global/mixins" as bp;
+
 .splitter {
     > :last-child {
       margin-top: 1.33rem; // to change with scale param
     }
   
-    @include breakpoint-up(medium) {
+    @include bp.breakpoint-up(medium) {
       display: flex;
   
       > * {

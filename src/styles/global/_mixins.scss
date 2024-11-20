@@ -1,8 +1,10 @@
+@use 'sass:map';
+@use 'tokens' as *;
 
 /* Mixins */
 @mixin breakpoint-up($bp) {
-  @if map-has-key($breakpoints-up, $bp) {
-    @media screen and (min-width: map-get($breakpoints-up, $bp)) {
+  @if map.has-key($breakpoints-up, $bp) {
+    @media screen and (min-width: map.get($breakpoints-up, $bp)) {
       @content;
     }
   }
@@ -13,8 +15,8 @@
 
 
 @mixin breakpoint-down($bp) {
-  @if map-has-key($breakpoints-down, $bp) {
-    @media screen and (max-width: map-get($breakpoints-down, $bp)) {
+  @if map.has-key($breakpoints-down, $bp) {
+    @media screen and (max-width: map.get($breakpoints-down, $bp)) {
       @content;
     }
   }

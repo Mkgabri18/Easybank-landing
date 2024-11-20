@@ -1,3 +1,5 @@
+@use "../global/tokens" as *;
+@use "../global/mixins" as bp;
 
 @each $key, $value in $textAlign {
     .text-#{$key} {
@@ -7,12 +9,12 @@
 }
 
 @each $key, $value in $textAlign {
-    @include breakpoint-up(medium) {
+    @include bp.breakpoint-up(medium) {
         .text-#{$key}--md {
             text-align: #{$value};
         }
     }
-    @include breakpoint-up(large) {
+    @include bp.breakpoint-up(large) {
         .text-#{$key}--lg {
             text-align: #{$value};
         }

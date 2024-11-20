@@ -1,3 +1,5 @@
+@use '../global/mixins' as bp;
+
 .hero {
     &_thumbnail {
         min-height: 55vh;
@@ -8,7 +10,7 @@
     }
 }
 
-@include breakpoint-up(large) {
+@include bp.breakpoint-up(large) {
     .hero {
         &_thumbnail {
             min-width: 60%;

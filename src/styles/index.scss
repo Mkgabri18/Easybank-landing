@@ -2,67 +2,69 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap'); */
 
 /* set layer to follow CUBE methodology */
-@layer global, composition, blocks, utilities;
+// @layer global, composition, blocks, utilities;
 
 
 /* Files Settings
 * Files setting of imports
 */
-@import "settings/core";
+@use "settings/imports";
+@use "settings/dependencies";
 
 /* Files Tools
 * Mixin of render and utilities
 */
-@import "tools/core";
-
+@use "tools/render"; // we need leade thjis peace of code
 
 /* Files Global */
-@import "global/core";
-
+@use "global/tokens";
+@use "global/reset";
+@use "global/mixins";
+@use "global/global";
 
 /* Files composition 
 * This class have layout functionality
 */
-@import "composition/core";
+@use "composition/center";
+@use "composition/fifty";
+@use "composition/flex";
+@use "composition/grid";
+@use "composition/row";
+@use "composition/sidebar";
+@use "composition/flow";
+@use "composition/splitter";
 
 
 /* Files Utilities 
 * Have one job to do
 */
-@import "utility/core";
+@use "utility/animation";
+@use "utility/click-area";
+@use "utility/margin";
+@use "utility/padding";
+@use "utility/scroll-container";
+@use "utility/typography";
+@use "utility/visibility";
+@use "utility/width";
+@use "utility/radius";
+@use "utility/wrapper";
+@use "utility/container";
+@use "utility/background";
+@use "utility/color";
+@use "utility/position";
+@use "utility/text";
+@use "utility/aspect-ratio";
+@use "utility/object-fit";
 
 /* Files Block
 * Files Component and user intertface elements
 */
-@import "block/core";
+@use "block/header";
+@use "block/footer";
+@use "block/button";
+@use "block/hero";
+@use "block/feature";
+@use "block/articles";
 
 
-
-
-/** family */
-@font-face {
-  font-family: 'Public sans';
-  src: url('../assets/fonts/PublicSans-Light.ttf') format("truetype");
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Public sans';
-  src: url('../assets/fonts/PublicSans-Regular.ttf') format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Public sans';
-  src: url('../assets/fonts/PublicSans-Bold.ttf') format("truetype");
-  font-weight: 700;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Public sans';
-  src: url('../assets/fonts/PublicSans-Black.ttf') format("truetype");
-  font-weight: 900;
-  font-display: swap;
-}
-  
 

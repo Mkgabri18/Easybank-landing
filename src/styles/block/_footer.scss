@@ -1,8 +1,10 @@
+@use '../global/mixins' as bp;
+
 .footer {
     .social {
         gap: 1rem;
 
-        @include breakpoint-up(large) {
+        @include bp.breakpoint-up(large) {
             grid-area: social;
             align-self: end;
         }
@@ -20,7 +22,7 @@
     }
     .navigation {
         gap: 0.725rem;
-        @include breakpoint-up(large) {
+        @include bp.breakpoint-up(large) {
             flex-direction: row;
             justify-content: center;
             gap: 4rem;
@@ -28,18 +30,18 @@
     }
     .link-list {
         gap: 0.725rem;
-        @include breakpoint-up(large) {
+        @include bp.breakpoint-up(large) {
             justify-content: space-between;
             align-items: start;
         }
 
         &.col1 {
-            @include breakpoint-up(large) {
+            @include bp.breakpoint-up(large) {
                 grid-area: link1;
             }
         }
         &.col2 {
-            @include breakpoint-up(large) {
+            @include bp.breakpoint-up(large) {
                 grid-area: link2;
             }
         }
@@ -53,13 +55,13 @@
 
     .cta {
 
-        @include breakpoint-up(large) {
+        @include bp.breakpoint-up(large) {
             grid-area: cta;
             text-align: right;
             justify-self: end;
         }
         .button {
-            @include breakpoint-up(medium) {
+            @include bp.breakpoint-up(medium) {
                 margin-bottom: 1.875rem;
             }
         }
@@ -67,7 +69,7 @@
 
     .copyright {
 
-        @include breakpoint-up(large) {
+        @include bp.breakpoint-up(large) {
             grid-area: copyright;
             align-self: end;
             justify-self: end;

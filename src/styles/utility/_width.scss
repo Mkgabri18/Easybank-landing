@@ -1,11 +1,9 @@
 
 // how import tokens from _token.scss
-// @use "../global/tokens" as tokens;
+@use "../global/tokens" as *;
 
-@include render('width') {
-  @each $key, $value in $widths {
-      .w-#{$key} {
-          width: $value;
-      }
-  }
+@each $key, $value in $widths {
+    .w-#{$key} {
+        width: $value;
+    }
 }

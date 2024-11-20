@@ -1,3 +1,6 @@
+@use 'sass:meta'; 
+@use '../global/mixins' as bp;
+@use '../global/tokens' as *;
 
 $marginIndex: (
   "m": 'margin',
@@ -18,20 +21,20 @@ $marginIndex: (
 
 @each $keyMargin, $valueMargin in $marginIndex {
     @each $keySize, $valueSize in $tokenSize {
-        @if type-of($valueMargin) == 'map' {
+        @if meta.type-of($valueMargin) == 'map' {
             .#{$keyMargin}-#{$keySize} {
                 @each $subKey, $subValue in $valueMargin {
                     #{$subValue}: #{$valueSize};
                 }
             }
-            @include breakpoint-up(medium) {
+            @include bp.breakpoint-up(medium) {
               .#{$keyMargin}-#{$keySize}--md {
                 @each $subKey, $subValue in $valueMargin {
                     #{$subValue}: #{$valueSize};
                 }
               }
             }
-            @include breakpoint-up(large) {
+            @include bp.breakpoint-up(large) {
               .#{$keyMargin}-#{$keySize}--lg {
                 @each $subKey, $subValue in $valueMargin {
                     #{$subValue}: #{$valueSize};
@@ -42,12 +45,12 @@ $marginIndex: (
             .#{$keyMargin}-#{$keySize} {
                 #{$valueMargin}: #{$valueSize};
             }
-            @include breakpoint-up(medium) {
+            @include bp.breakpoint-up(medium) {
               .#{$keyMargin}-#{$keySize}--md {
                 #{$valueMargin}: #{$valueSize};
               }
             }
-            @include breakpoint-up(large) {
+            @include bp.breakpoint-up(large) {
               .#{$keyMargin}-#{$keySize}--lg {
                 #{$valueMargin}: #{$valueSize};
               }
@@ -63,7 +66,7 @@ $marginIndex: (
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
-  @include breakpoint-down(medium) {
+  @include bp.breakpoint-down(medium) {
     &--only-sm {
       margin-left: auto;
       margin-right: auto;

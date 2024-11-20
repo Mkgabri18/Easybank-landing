@@ -1,3 +1,5 @@
+@use '../global/mixins' as bp;
+
 /**
  * Default flexbox utility classes to control layout
  *
@@ -18,9 +20,6 @@
   --layout-self-justify: center;
 }
 
-
-
-@include render('flex') {
 
 .flex {
   display: flex;
@@ -104,7 +103,7 @@
 
 
 
-@include breakpoint-up(large) {
+@include bp.breakpoint-up(large) {
   .flex\@lg {  
     display: flex;
     flex-direction: var(--layout-direction);
@@ -160,6 +159,4 @@
 }
 .--stretch {
   --layout-align: stretch;
-}
-
 }
