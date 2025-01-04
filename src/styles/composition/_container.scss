@@ -1,12 +1,13 @@
 .container {
     width: 100%;
-    &--sm {
+
+    &[data-size="small"] {
         max-width: 39.9375rem;
     }
-    &-md {
+    &[data-size="medium"] {
         max-width: 63.9375rem;
     }
-    &-lg {
+    &[data-size="large"] {
         max-width: 89.938rem;
     }
 }

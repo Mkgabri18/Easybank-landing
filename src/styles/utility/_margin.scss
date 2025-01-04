@@ -1,3 +1,4 @@
+@use 'sass:meta';
 
 $marginIndex: (
   "m": 'margin',
@@ -18,7 +19,7 @@ $marginIndex: (
 
 @each $keyMargin, $valueMargin in $marginIndex {
     @each $keySize, $valueSize in $tokenSize {
-        @if type-of($valueMargin) == 'map' {
+        @if meta.type-of($valueMargin) == 'map' {
             .#{$keyMargin}-#{$keySize} {
                 @each $subKey, $subValue in $valueMargin {
                     #{$subValue}: #{$valueSize};

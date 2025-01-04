@@ -1,27 +1,29 @@
+@use '../global/mixins' as bp;
+
 .flow > * + * {
     margin-top: var(--flow-space, 1rem);
 }
 
 .flow--md > * + * {
-  @include breakpoint-up(medium) {
+  @include bp.breakpoint-up(medium) {
     margin-top: var(--flow-space, 1rem);
   }
 }
 
-@include breakpoint-up(large) {
+@include bp.breakpoint-up(large) {
   .flow--lg > * + * {
     margin-top: var(--flow-space, 1rem);
   }
 }
 
-@include breakpoint-down(medium) {
+@include bp.breakpoint-down(medium) {
   .flow--only-sm > * + * {
     margin-top: var(--flow-space, 1rem);
   }
 }
 
 .flow--only-md > * + * {
-  @include breakpoint-down(large) {
+  @include bp.breakpoint-down(large) {
     margin-top: var(--flow-space, 1rem);
   }
 }

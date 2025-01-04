@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const postcssUncss = require('postcss-uncss');
+const UnCSSPlugin = require('uncss-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, "src"),
@@ -32,6 +34,10 @@ const config = {
             { from: 'src/assets/fonts', to: 'assets/fonts' }
           ]
         }),
+        new UnCSSPlugin({
+          html: glob.sync(`${PATHS.dist}/*.html`, { nodir: true }),
+          stylesheets: [`${PATHS.dist}/css/override.css`],
+         })
         // new PurgeCSSPlugin({
         //   paths: () => glob.sync(`${PATHS.src}/templates/**/*.pug`, { nodir: true }),
         //   safelist: {
@@ -50,7 +56,27 @@ const config = {
             use: [
               {loader: MiniCssExtractPlugin.loader},
               {loader: 'css-loader'},
-              {loader: 'sass-loader'}
+              {loader: 'sass-loader'},
+              {
+                // loader: 'postcss-loader',
+                // options: {
+                //   postcssOptions: {
+                //     plugins: [
+                //       postcssUncss({
+                //         // html: glob.sync(`${PATHS.src}/templates/**/*.pug`, { nodir: true }),
+                //         html: glob.sync(`${PATHS.dist}/*.html`, { nodir: true }),
+                //         stylesheets: [`${PATHS.dist}/css/override.css`],
+                //         ignore: [
+                //           /@xxl$/, 
+                //           /@xl$/, 
+                //           /@lg$/, 
+                //           /@md$/
+                //         ], // aggiungi regole ignorate
+                //       }),
+                //     ],
+                //   },
+                // },
+              },
             ]
           },
           {

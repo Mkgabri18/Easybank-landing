@@ -1,40 +1,69 @@
 /* Google fonts */ 
 /* @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400:700&display=swap'); */
 
-/* set layer to follow CUBE methodology */
-@layer global, composition, blocks, utilities;
-
-
 /* Files Settings
 * Files setting of imports
 */
-@import "settings/core";
+@use 'settings/imports';
+@use 'settings/dependencies';
 
 /* Files Tools
 * Mixin of render and utilities
 */
-@import "tools/core";
+@use "tools/render";
 
 
 /* Files Global */
-@import "global/core";
+@use 'global/tokens';
+@use 'global/reset';
+@use 'global/mixins';
+@use 'global/global';
 
 
 /* Files composition 
 * This class have layout functionality
 */
-@import "composition/core";
+@forward "composition/center";
+@forward "composition/container";
+@forward "composition/fifty";
+@forward "composition/flex";
+@forward "composition/grid";
+@forward "composition/row";
+@forward "composition/sidebar";
+@forward "composition/flow";
+@forward "composition/splitter";
 
 
 /* Files Utilities 
 * Have one job to do
 */
-@import "utility/core";
+/* @use "utility/animation";
+@use "utility/click-area";
+@use "utility/margin";
+@use "utility/padding";
+@use "utility/scroll-container";
+@use "utility/typography";
+@use "utility/visibility";
+@use "utility/width";
+@use "utility/radius";
+@use "utility/wrapper";
+@use "utility/container";
+@use "utility/background";
+@use "utility/color";
+@use "utility/position";
+@use "utility/text";
+@use "utility/aspect-ratio";
+@use "utility/object-fit"; */
 
 /* Files Block
 * Files Component and user intertface elements
 */
-@import "block/core";
+/* @use "block/header";
+@use "block/footer";
+@use "block/button";
+@use "block/hero";
+@use "block/feature";
+@use "block/articles"; */
 
 
 

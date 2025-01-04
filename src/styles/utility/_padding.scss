@@ -1,3 +1,4 @@
+@use 'sass:meta';
 
 $paddingIndex: (
   "p": 'padding',
@@ -17,7 +18,7 @@ $paddingIndex: (
 
 @each $keyPadding, $valuePadding in $paddingIndex {
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
+    @if meta.type-of($valuePadding) == 'map' {
       .#{$keyPadding}-#{$keySize} {
         @each $subKey, $subValue in $valuePadding {
           #{$subValue}: #{$valueSize};
@@ -31,7 +32,7 @@ $paddingIndex: (
   }
 
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
+    @if meta.type-of($valuePadding) == 'map' {
       @include breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--md {
           @each $subKey, $subValue in $valuePadding {
@@ -49,7 +50,7 @@ $paddingIndex: (
   }
 
   @each $keySize, $valueSize in $tokenSize {
-    @if type-of($valuePadding) == 'map' {
+    @if meta.type-of($valuePadding) == 'map' {
       @include breakpoint-up(medium) { 
         .#{$keyPadding}-#{$keySize}--lg {
           @each $subKey, $subValue in $valuePadding {
