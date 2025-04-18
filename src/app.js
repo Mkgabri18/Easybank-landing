@@ -1,9 +1,8 @@
 import style from './styles/index.scss';
 import _hyperscript from 'hyperscript.org';
-// Custom npm 
-import ClassList from 'js-toolbox-mk/src/classList.js';
-import { selectId, select, selectAll } from 'js-toolbox-mk/src/selectors';
-import 'js-toolbox-mk/src/mouseEvent.js';
+// Custom npm library
+import domToolkit from 'dom-toolkit-js';
+const { Selectors } = domToolkit;
 
 import './assets/logo.svg';
 import './assets/logo-white.svg';
@@ -20,19 +19,23 @@ import './assets/image-restaurant.jpg';
 import './assets/image-plane.jpg';
 
 _hyperscript.browserInit();
+const { selectId } = new Selectors()
 
 console.log("Hello World, time to init")
 
 // My npm Library for DOM manipulation
-let $burger = selectId('btnHamburger');
-let $header = select('.header')
+selectId('btnHamburger').onClick(toggleMenu);
 
-$burger.onClick(toggleMenu)
 
 function toggleMenu() {
-    ClassList($header).toggle('open')
+    selectId('header').toggleClass('open');
 }
 
+selectId('InviteBtn').onClick((_, target) => {
+    console.log("click on invite button", _, target)
+    target.inHtml('Inviting...');
+    setTimeout(() => target.inHtml('Request sended'), 3000)
+})
 
 // JS code for toggle menu
 // const menuHamburger = document.getElementById('btnHamburger');

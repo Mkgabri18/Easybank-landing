@@ -2,7 +2,7 @@ const path = require('path');
 const glob = require("glob");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+// const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PATHS = {
@@ -11,7 +11,7 @@ const PATHS = {
 };
 
 const config = {
-    entry: './src/app.js',
+    entry: './src/app.js',  
     output: {
         path: PATHS.dist,
         filename: "js/[name].bundle.js",
@@ -32,12 +32,12 @@ const config = {
             { from: 'src/assets/fonts', to: 'assets/fonts' }
           ]
         }),
-        new PurgeCSSPlugin({
-          paths: () => glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-          safelist: {
-            deep: [/^xxl:/, /^xl:/, /^lg:/, /^md:/],
-          },
-        })
+        // new PurgeCSSPlugin({
+        //   paths: () => glob.sync(`${PATHS.src}/templates/**/*.pug`, { nodir: true }),
+        //   safelist: {
+        //     deep: [/@xxl$/, /@xl$/, /@lg$/, /@md$/],
+        //   },
+        // })
     ],
     module: {
         rules: [
@@ -54,7 +54,7 @@ const config = {
             ]
           },
           {
-            test: /\.(png|svg|jpe?g|gif)$/i,
+            test: /\.(png|svg|jpe?g|gif|webp)$/i,
             use: [
               {
                 loader: 'file-loader',
